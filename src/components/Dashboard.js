@@ -10,7 +10,9 @@ import JSON from '../data.json'; // Data model
 class Dashboard extends Component {
   constructor () {
     super()
-    this.state = JSON;
+
+    var data = JSON;
+    this.state = data;
   }
   render () {
     return (
@@ -23,9 +25,9 @@ class Dashboard extends Component {
           <div>
             <p><Link to="/projects/add" className="button">Add new project</Link></p>
           </div>
-          <ProjectsTable projects={this.state.projects} user={this.state.user} />
+          <ProjectsTable projects={this.state.projects} user={this.state.user} clients={this.state.clients} />
         </div>
-        <BookingsTable bookings={this.state.bookings} user={this.state.user} />
+        <BookingsTable bookings={this.state.bookings} user={this.state.user} clients={this.state.clients} />
       </div>
     );
   }

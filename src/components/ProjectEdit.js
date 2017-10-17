@@ -9,16 +9,18 @@ class ProjectEdit extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
-    this.state = JSON;
-    this.state.id = match.params.id;
-
-    this.state.project = this.state.projects.filter(function (el) {
-      return el.id === match.params.id
+    // Get the JSON data then manipulate it to only set the state of the data we need
+    var data = JSON;
+    data.id = match.params.id;
+    data.project = data.projects.filter(function (el) {
+      return el.id === data.id
     });
 
-    this.state.title = this.state.project[0].title;
-    this.state.description = this.state.project[0].description;
-    this.state.client = this.state.project[0].client.id;
+    data.title = data.project[0].title;
+    data.description = data.project[0].description;
+    data.client = data.project[0].client;
+
+    this.state = data;
 
   }
 

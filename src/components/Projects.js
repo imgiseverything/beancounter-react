@@ -9,7 +9,9 @@ import JSON from '../data.json'; // Data model
 class Projects extends Component {
   constructor () {
     super()
-    this.state = JSON;
+
+    var data = JSON;
+    this.state = data;
   }
   render () {
     return (

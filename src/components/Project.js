@@ -6,18 +6,20 @@ class Project extends Component {
   constructor ({match}) {
     super()
 
-    this.state = JSON;
-    this.state.id = match.params.id;
-
-    this.state.project = this.state.projects.filter(function (el) {
-      return el.id === match.params.id
+    // Get the JSON data then manipulate it to only set the state of the data we need
+    var data = JSON;
+    data.id = match.params.id;
+    data.project = data.projects.filter(function (el) {
+      return el.id === data.id
+    });
+    data.client = data.clients.filter(function (el) {
+      return el.id === data.project[0].client
     });
 
-    this.state.client = this.state.clients.filter(function (el) {
-      return el.id === this.state.project[0].client
-    }.bind(this));
+    this.state = data;
 
   }
+
   render () {
 
     // var clientLink = "/clients/view/" + this.state.project[0].client.id; Commented out until we set up the client section

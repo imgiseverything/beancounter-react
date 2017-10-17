@@ -7,6 +7,7 @@ class ProjectsTable extends Component {
     this.state = this.props;
   }
 
+  // Get the client's title from an object of clients
   getClientTitle(id) {
     var matchedClient = this.state.clients.filter(function (el) {
       return el.id === id

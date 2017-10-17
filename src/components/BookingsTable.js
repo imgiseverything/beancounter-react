@@ -7,6 +7,7 @@ class BookingsTable extends Component {
     this.state = this.props;
 
   }
+
   render() {
 
     var bookingsTableRows = [];
@@ -48,7 +49,10 @@ class BookingsTableRow extends Component {
   }
   render () {
 
-    var viewLink = "/bookings/" + this.props.bookingId;
+    // Commented out until we set up the client section
+    // var viewLink = "/bookings/" + this.props.bookingId;
+
+    var viewLink = '#';
 
     return (
 

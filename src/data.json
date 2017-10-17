@@ -9,18 +9,21 @@
        "id": "1",
        "title": "Project 1",
        "client": "1",
+       "description": "An example project",
        "dueDate": "2017-06-01"
      },
      {
        "id": "2",
        "title": "Project 2",
        "client": "1",
+       "description": "An example project",
        "dueDate": "2017-06-08"
      },
      {
        "id": "3",
        "title": "Project 3",
        "client": "2",
+       "description": "An example project",
        "dueDate": "2017-05-01"
      }
   ],
@@ -41,11 +44,19 @@
   "clients": [
     {
       "id": "1",
-      "title": "Client 1"
+      "title": "Client 1",
+      "contact": {
+        "name": "Mrs Contact Name",
+        "email": "email@email.com"
+      }
     },
     {
       "id": "2",
-      "title": "Client 2"
+      "title": "Client 2",
+      "contact": {
+        "name": "Mr Contact Name",
+        "email": "email@email.com"
+      }
     }
   ]
 }

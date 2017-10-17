@@ -10,32 +10,30 @@ class ProjectInvoice extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
-    // eslint-disable-next-line
-    this.state = JSON;
-    this.setState({
-      id: match.params.id
-    });
-    // eslint-disable-next-line
-    this.state.project = this.state.projects.filter(function (el) {
-      return el.id === match.params.id
-    });
-
-  }
-
-  componentWillMount() {
-
+    // Get the JSON data then manipulate it to only set the state of the data we need
     var d = new Date();
+    var data = JSON;
 
-    this.setState({
-      subject: 'Invoice for ' + this.state.project[0].title,
-      message: '',
-      day: d.getDate(),
-      month: d.getMonth(),
-      year: d.getFullYear()
+    data.id = match.params.id;
+
+    data.project = data.projects.filter(function (el) {
+      return el.id === data.id
     });
 
-  }
+    data.client = data.clients.filter(function (el) {
+      return el.id === data.project[0].client
+    });
 
+    data.subject = 'Invoice for ' + data.project[0].title;
+    data.message = 'Dear ' + data.client[0].contact.name + 'Please find attached an invoice for ' + data.project[0].title;
+
+    data.day = d.getDate();
+    data.month = d.getMonth();
+    data.year = d.getFullYear();
+
+    this.state = data;
+
+  }
   handleChange(event) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
