@@ -1,0 +1,51 @@
+{
+  "user": {
+    "id": "1",
+    "fullName": "Phil Thompson",
+    "accessLevel": "Superuser"
+  },
+  "projects": [
+     {
+       "id": "1",
+       "title": "Project 1",
+       "client": "1",
+       "dueDate": "2017-06-01"
+     },
+     {
+       "id": "2",
+       "title": "Project 2",
+       "client": "1",
+       "dueDate": "2017-06-08"
+     },
+     {
+       "id": "3",
+       "title": "Project 3",
+       "client": "2",
+       "dueDate": "2017-05-01"
+     }
+  ],
+  "bookings": [
+    {
+      "id": "1",
+      "client": "2",
+      "dateStart": "2017-04-01 09:00:00",
+      "dateEnd": "2017-04-01 17:00:00"
+    },
+    {
+      "id": "2",
+      "client": "1",
+      "dateStart": "2017-04-02 09:00:00",
+      "dateEnd": "2017-04-03 17:00:00"
+    }
+  ],
+  "clients": [
+    {
+      "id": "1",
+      "title": "Client 1"
+    },
+    {
+      "id": "2",
+      "title": "Client 2"
+    }
+  ]
+}
