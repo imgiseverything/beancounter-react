@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import JSON from '../data.json'; // Projects data
+import JSON from '../../data.json'; // Projects data
 
 // Build Projects component
-class Project extends Component {
+class ProjectView extends Component {
   constructor ({match}) {
     super()
 
@@ -22,21 +22,24 @@ class Project extends Component {
 
   render () {
 
-    // var clientLink = "/clients/view/" + this.state.project[0].client.id; Commented out until we set up the client section
+    var clientLink = "/clients/view/" + this.state.client[0].id;
     var editLink = "/projects/edit/" + this.state.id;
     var invoiceLink = "/projects/invoice/" + this.state.id;
+    var deleteLink = "/projects/delete/" + this.state.id;
 
     return (
       <div className="projects">
         <div>
           <div>
             <h1>{ this.state.project[0].title }</h1>
-            <p>Client: { this.state.client[0].title}</p>
+            <p>Client: <a href={ clientLink }>{ this.state.client[0].title}</a></p>
+            <p>{ this.state.project[0].description }</p>
           </div>
           <div>
             <ul>
               <li><a href={ invoiceLink } className="button">Send invoice</a></li>
               <li><a href={ editLink } className="button">Edit project</a></li>
+              <li><a href={ deleteLink } className="button">Delete project</a></li>
             </ul>
           </div>
         </div>
@@ -45,4 +48,4 @@ class Project extends Component {
   }
 }
 
-export default Project;
+export default ProjectView;

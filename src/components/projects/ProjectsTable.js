@@ -22,7 +22,7 @@ class ProjectsTable extends Component {
 
     this.state.projects.forEach(function(project) {
       var clientDetails = this.getClientTitle(project.client);
-      projectsTableRows.push(<ProjectsTableRow key={project.id} projectId={project.id} clientTitle={clientDetails[0].title} dueDate={project.dueDate} accessLevel={accessLevel} />);
+      projectsTableRows.push(<ProjectsTableRow key={project.id} projectId={project.id} clientId={clientDetails[0].id} clientTitle={clientDetails[0].title} dueDate={project.dueDate} accessLevel={accessLevel} />);
 
     }.bind(this));
 
@@ -57,6 +57,7 @@ class ProjectsTableRow extends Component {
 
     var viewLink = "/projects/view/" + this.props.projectId;
     var reInvoiceLink = "/projects/invoice/" + this.props.projectId;
+    var clientLink = "/clients/view/" + this.props.clientId;
     let actions = null;
 
     // Superuser v normal user actions
@@ -70,7 +71,7 @@ class ProjectsTableRow extends Component {
 
       <tr>
         <td>{ this.props.projectId }</td>
-        <td>{ this.props.clientTitle }</td>
+        <td><a href={ clientLink }>{ this.props.clientTitle }</a></td>
         <td>{ this.props.dueDate }</td>
         { actions }
       </tr>

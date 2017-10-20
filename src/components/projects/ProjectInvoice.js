@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import JSON from '../data.json'; // Data model
+import JSON from '../../data.json'; // Data model
 
 // Build Project Invoice Form component
 class ProjectInvoice extends Component {
@@ -25,7 +25,7 @@ class ProjectInvoice extends Component {
     });
 
     data.subject = 'Invoice for ' + data.project[0].title;
-    data.message = 'Dear ' + data.client[0].contact.name + "\n\n" + 'Please find attached an invoice for ' + data.project[0].title;
+    data.message = 'Dear ' + data.client[0].contact.name + "\n\n Please find attached an invoice for " + data.project[0].title;
 
     data.day = d.getDate();
     data.month = d.getMonth();

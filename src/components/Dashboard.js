@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import {
   Link
 } from 'react-router-dom'
-import ProjectsTable from './ProjectsTable';
-import BookingsTable from './BookingsTable';
+import ProjectsTable from './projects/ProjectsTable';
+import BookingsTable from './bookings/BookingsTable';
 import JSON from '../data.json'; // Data model
 
 // Build Dashboard component
@@ -19,7 +19,7 @@ class Dashboard extends Component {
       <div className="dashboard">
         <div>
           <div>
-            <h1>Gettin started</h1>
+            <h1>Bean Counter</h1>
             <p>Manage your online work. Create and send quotes (proposals). File and send invoices (projects).</p>
           </div>
           <div>

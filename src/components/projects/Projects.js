@@ -3,7 +3,7 @@ import {
   Link
 } from 'react-router-dom'
 import ProjectsTable from './ProjectsTable';
-import JSON from '../data.json'; // Data model
+import JSON from '../../data.json'; // Data model
 
 // Build Projects component
 class Projects extends Component {

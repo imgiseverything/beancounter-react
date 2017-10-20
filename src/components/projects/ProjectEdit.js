@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import JSON from '../data.json'; // Data model
+import JSON from '../../data.json'; // Data model
 
 // Build Project Edit Form component
 class ProjectEdit extends Component {
